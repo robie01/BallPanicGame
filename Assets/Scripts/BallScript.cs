@@ -16,9 +16,13 @@ public class BallScript : MonoBehaviour {
     [SerializeField]
     private GameObject originalBall;
 
+    // ref for instantiating new ball
     private GameObject ball1, ball2;
 
     private BallScript ballScript1, ballScript2;
+
+    [SerializeField]
+    private AudioClip[] popSounds;
 
     private void Awake()
     {
@@ -157,6 +161,7 @@ public class BallScript : MonoBehaviour {
                 }
                 break;
         }
+        AudioSource.PlayClipAtPoint(popSounds[Random.Range(0, popSounds.Length)], transform.position);
         gameObject.SetActive(false);
 
     }

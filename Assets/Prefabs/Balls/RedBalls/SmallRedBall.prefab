@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212263805591871452}
   - component: {fileID: 58669830233313620}
   - component: {fileID: 50645799968837010}
+  - component: {fileID: 114339910865855234}
   m_Layer: 12
   m_Name: SmallRedBall
   m_TagString: SmallBall
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377952257504028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.37, y: 5.79, z: 0}
+  m_LocalPosition: {x: -3.8001018, y: 4.206973, z: 0}
   m_LocalScale: {x: 0.198, y: 0.199, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,6 +78,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.04}
   serializedVersion: 2
   m_Radius: 1.12
+--- !u!114 &114339910865855234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377952257504028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb35bf43b43da48e3bac28725096781c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveLeft: 0
+  moveRight: 0
+  myRigidBody: {fileID: 50645799968837010}
+  originalBall: {fileID: 1138429588358736, guid: 3e9d0d8a083d04f3ba4724d8c1b816d8,
+    type: 2}
 --- !u!212 &212263805591871452
 SpriteRenderer:
   m_ObjectHideFlags: 1

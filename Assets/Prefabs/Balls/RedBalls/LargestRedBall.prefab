@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212215297925011504}
   - component: {fileID: 58819978377296474}
   - component: {fileID: 50541435082955086}
+  - component: {fileID: 114102523735827380}
   m_Layer: 12
   m_Name: LargestRedBall
   m_TagString: LargestBall
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220771454603118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.84, z: 0}
+  m_LocalPosition: {x: 3.5864446, y: 1.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,12 +72,26 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.04}
+  m_Offset: {x: -0.02, y: 0.02}
   serializedVersion: 2
-  m_Radius: 1.12
+  m_Radius: 1.16
+--- !u!114 &114102523735827380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220771454603118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb35bf43b43da48e3bac28725096781c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveLeft: 0
+  moveRight: 1
+  myRigidBody: {fileID: 50541435082955086}
 --- !u!212 &212215297925011504
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212701711628665860}
   - component: {fileID: 50043157196891500}
   - component: {fileID: 61613792308308140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dynamite
-  m_TagString: Untagged
+  m_TagString: Dynamite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,8 +118,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1172386081
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300082, guid: 5eb98630388504f63a229a95d69e374a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

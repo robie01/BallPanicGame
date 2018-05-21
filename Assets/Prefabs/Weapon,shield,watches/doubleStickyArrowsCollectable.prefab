@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212643641398775436}
   - component: {fileID: 50102374500808022}
   - component: {fileID: 61767618585122364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: doubleStickyArrowsCollectable
-  m_TagString: Untagged
+  m_TagString: DoubleStickyArrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,8 +118,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1172386081
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300090, guid: 5eb98630388504f63a229a95d69e374a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

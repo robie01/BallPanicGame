@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 61245013072394264}
   m_Layer: 11
   m_Name: GreenBrickRight
-  m_TagString: Untagged
+  m_TagString: RightBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

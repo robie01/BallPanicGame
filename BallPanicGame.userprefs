@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{9FFD5082-435F-7BB5-180B-57C3B34328BF}|">
   <MonoDevelop.Ide.ItemProperties.BallPanicGame PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BallScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ArrowScript.cs">
     <Files>
       <File FileName="Assets/Scripts/PlayerScripts.cs" Line="68" Column="28" />
-      <File FileName="Assets/Scripts/BallScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BallScript.cs" Line="27" Column="20" />
+      <File FileName="Assets/Scripts/ArrowScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

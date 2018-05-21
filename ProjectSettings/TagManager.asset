@@ -42,6 +42,7 @@ TagManager:
   - MoveLeftButton
   - MoveRightButton
   - ShootButton
+  - SecondStickyArrow
   layers:
   - Default
   - TransparentFX
@@ -90,4 +91,7 @@ TagManager:
     locked: 0
   - name: GameplayCanvas
     uniqueID: 139713913
+    locked: 0
+  - name: BGBricks
+    uniqueID: 3854578245
     locked: 0

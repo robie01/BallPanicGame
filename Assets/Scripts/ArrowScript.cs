@@ -9,7 +9,7 @@ public class ArrowScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        canShootStickyArrow = false;
+        canShootStickyArrow = true;
 	}
 	
 	// Update is called once per frame
@@ -25,8 +25,14 @@ public class ArrowScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D target)
     {
+        if(target.tag == "LargestBall" || target.tag == "LargeBall" || target.tag == "MediumBall"
+           || target.tag == "SmallBall" || target.tag == "SmallestBall") {
+            gameObject.SetActive(false);
+        } // if the arrow hits a ball
+
         if(target.tag == "TopBrick") {
             gameObject.SetActive(false);
-        }
+        } // on trigger enter
+
     }
 }

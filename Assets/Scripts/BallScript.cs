@@ -92,74 +92,23 @@ public class BallScript : MonoBehaviour {
         ball1.SetActive(true);
         ball2.SetActive(true);
 
-        switch(gameObject.tag){
-            
-            case "LargestBall":
-                if(transform.position.y > 1 && transform.position.y <= 1.3){
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                } else if (transform.position.y > 1.3f) {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
-                } else if(transform.position.y < 1) {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
-                }
-                break;
-
-            case "LargeBall":
-                if (transform.position.y > 1 && transform.position.y <= 1.3)
-                {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                }
-                else if (transform.position.y > 1.3f)
-                {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
-                }
-                else if (transform.position.y < 1)
-                {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
-                }
-                break;
-
-            case "MediumBall":
-                if (transform.position.y > 1 && transform.position.y <= 1.3)
-                {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                }
-                else if (transform.position.y > 1.3f)
-                {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
-                }
-                else if (transform.position.y < 1)
-                {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
-                }
-                break;
-
-            case "SmallBall":
-                if (transform.position.y > 1 && transform.position.y <= 1.3)
-                {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                }
-                else if (transform.position.y > 1.3f)
-                {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
-                }
-                else if (transform.position.y < 1)
-                {
-                    ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
-                    ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
-                }
-                break;
+        if (gameObject.tag != "SmallestBall")
+        {
+            if (transform.position.y > 1 && transform.position.y <= 1.3)
+            {
+                ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
+                ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
+            }
+            else if (transform.position.y > 1.3f)
+            {
+                ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
+                ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2f);
+            }
+            else if (transform.position.y < 1)
+            {
+                ball1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
+                ball2.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5.5f);
+            }
         }
         AudioSource.PlayClipAtPoint(popSounds[Random.Range(0, popSounds.Length)], transform.position);
         gameObject.SetActive(false);

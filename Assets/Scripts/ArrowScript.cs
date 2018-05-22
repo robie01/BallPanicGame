@@ -66,7 +66,9 @@ public class ArrowScript : MonoBehaviour {
           
         } // if the arrow hits a ball
 
-        if(target.tag == "TopBrick") {
+        if(target.tag == "TopBrick" || target.tag == "UnbreakableBrickTop" || target.tag == "UnbreakableBrickBottom"
+           || target.tag == "UnbreakableBrickLeft" || target.tag == "UnbreakableBrickRight"
+           || target.tag == "UnbreakableBrickBottomVertical") {
 
             if(this.gameObject.tag == "FirstArrow"){
                 PlayerScripts.instance.PlayerShootOnce(true);
@@ -80,7 +82,16 @@ public class ArrowScript : MonoBehaviour {
                 canShootStickyArrow = false;
                 Vector3 targetPos = target.transform.position;
                 Vector3 temp = transform.position;
-                targetPos.y -= 0.989f;
+
+                if(target.tag == "TopBrick"){
+                    targetPos.y -= 0.989f;
+                } else if(target.tag == "UnbreakableBrickTop" || target.tag == "UnbreakableBrickBottom"
+                          || target.tag == "UnbreakableBrickLeft" || target.tag == "UnbreakableBrickRight") {
+                    targetPos.y -= 0.75f;
+                } else if(target.tag == "UnbreakableBrickBottomvertical") {
+                    targetPos.y -= 0.97f;
+                }
+
                 temp.y = targetPos.y;
                 transform.position = temp;
                 AudioSource.PlayClipAtPoint(stickyClip, transform.position);
@@ -91,14 +102,40 @@ public class ArrowScript : MonoBehaviour {
                 canShootStickyArrow = false;
                 Vector3 targetPos = target.transform.position; // position of the brick
                 Vector3 temp = transform.position;
-                targetPos.y -= 0.989f;
+
+                if (target.tag == "TopBrick")
+                {
+                    targetPos.y -= 0.989f;
+                }
+                else if (target.tag == "UnbreakableBrickTop" || target.tag == "UnbreakableBrickBottom"
+                        || target.tag == "UnbreakableBrickLeft" || target.tag == "UnbreakableBrickRight")
+                {
+                    targetPos.y -= 0.75f;
+                }
+                else if (target.tag == "UnbreakableBrickBottomvertical")
+                {
+                    targetPos.y -= 0.97f;
+                }
+              
                 temp.y = targetPos.y;
                 transform.position = temp;
                 AudioSource.PlayClipAtPoint(stickyClip, transform.position);
                 StartCoroutine("ResetStickyArrow");
             }
 
-        } // on trigger enter
+        }  // if the arrow hits unbreakable brick
 
-    }
+        if(target.tag == "BrokenBrickTop" || target.tag == "BrokenBrickBottom" 
+           || target.tag == "BrokenBrickLeft" || target.tag == "BrokenBrickRight") {
+
+            if(gameObject.tag == "FirstArrow" || gameObject.tag == "FirstStickyArrow"){
+                PlayerScripts.instance.PlayerShootOnce(true);
+            } else if(gameObject.tag == "SecondArrow" || gameObject.tag == "SecondStickyArrow") {
+                PlayerScripts.instance.PlayerShootTwice(true);
+            }
+
+            gameObject.SetActive(false);
+        } // if the arrow hits breakable brick
+
+    }// on trigger enter
 }

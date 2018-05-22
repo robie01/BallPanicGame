@@ -94,6 +94,9 @@ MonoBehaviour:
   myRigidBody: {fileID: 50855004698719900}
   originalBall: {fileID: 1377952257504028, guid: 093e75c14c290425fa01808aa98459c1,
     type: 2}
+  popSounds:
+  - {fileID: 8300000, guid: 74625bc425543480ebed8df6f76ca551, type: 3}
+  - {fileID: 8300000, guid: 66c75d93fdfd24dd481b9772d5b9c7b6, type: 3}
 --- !u!212 &212091935333146022
 SpriteRenderer:
   m_ObjectHideFlags: 1

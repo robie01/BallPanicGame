@@ -84,7 +84,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220771454603118}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb35bf43b43da48e3bac28725096781c, type: 3}
   m_Name: 
@@ -94,6 +94,9 @@ MonoBehaviour:
   myRigidBody: {fileID: 50541435082955086}
   originalBall: {fileID: 1998656741524402, guid: ad564261f4fda41028749f9791d6edb3,
     type: 2}
+  popSounds:
+  - {fileID: 8300000, guid: 74625bc425543480ebed8df6f76ca551, type: 3}
+  - {fileID: 8300000, guid: 66c75d93fdfd24dd481b9772d5b9c7b6, type: 3}
 --- !u!212 &212215297925011504
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerScripts : MonoBehaviour {
 
+    public static PlayerScripts instance;
+
     private float speed = .01f;
     private float maxVelocity = 3.0f;
 
@@ -27,14 +29,21 @@ public class PlayerScripts : MonoBehaviour {
     [SerializeField]
     private AudioClip shootclip;
 
+    public bool shootOnce, shootTwice;
 
     // initialization
     void Awake()
     {
+        if(instance == null) {
+            instance = this;
+        }
         float cameraHeight = Camera.main.orthographicSize;
         // position the arrow exactly below the camera
         height = -cameraHeight - 0.8f;
         canWalk = true;
+
+        shootOnce = true;
+        shootTwice = true;
     }
 
     // Use this for initialization
@@ -56,14 +65,28 @@ public class PlayerScripts : MonoBehaviour {
         PlayerWalkKeyBoard();
     }
 
+    public void PlayerShootOnce(bool shootOnce) {
+        this.shootOnce = shootOnce;
+    }
+    public void PlayerShootTwice(bool shootTwice) {
+        this.shootTwice = shootTwice;
+    }
+
     public void shootTheArrow() {
 
         if(Input.GetMouseButtonDown(0)) {
-            StartCoroutine(PlayTheShootAnimation());
 
-            // firing arrows based on player's x
-            GameObject arrow1 = Instantiate(arrows[0]
-                                            , new Vector3(transform.position.x, height, 0),Quaternion.identity) as GameObject;
+            if(shootOnce) {
+               shootOnce = false;
+                StartCoroutine(PlayTheShootAnimation());
+                // firing arrows based on player's x
+                 Instantiate(arrows[0], new Vector3(transform.position.x, height, 0), Quaternion.identity);
+            } else if (shootTwice) {
+               shootTwice = false;
+                StartCoroutine(PlayTheShootAnimation());
+                // firing arrows based on player's x
+               Instantiate(arrows[1], new Vector3(transform.position.x, height, 0), Quaternion.identity);
+            }
         }
 
     }

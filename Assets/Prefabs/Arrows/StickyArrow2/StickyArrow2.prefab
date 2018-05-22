@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 4547189699340418}
   - component: {fileID: 50742757787363560}
   - component: {fileID: 61314574610712304}
+  - component: {fileID: 114314851191961896}
   m_Layer: 9
   m_Name: StickyArrow2
   m_TagString: SecondStickyArrow
@@ -206,6 +207,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36, y: 4.83}
   m_EdgeRadius: 0
+--- !u!114 &114314851191961896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1829498520024698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de091748ca1b4778a57c5013b96c6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212128263353650314
 SpriteRenderer:
   m_ObjectHideFlags: 1

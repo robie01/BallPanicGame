@@ -142,8 +142,8 @@ public class BallScript : MonoBehaviour {
     // this is fired when trigger in unity is clicked.
     private void OnTriggerEnter2D(Collider2D target)
     {
-        if(target.tag == "FirstArrow" || target.tag == "SecondArrow" || target.tag == "FirstStickyArrow"
-           || target.tag == "SecondStickyArrow") {
+        if(target.tag == "FirstArrow" || target.tag == "SecondArrow" || target.tag == "SingleStickyArrow"
+           || target.tag == "DoubleStickyArrow") {
 
             if (gameObject.tag != "SmallestBall") {
                 InitializedBallsAndTurnOffCurrentBalls();
@@ -151,6 +151,24 @@ public class BallScript : MonoBehaviour {
                 gameObject.SetActive(false);
             }
         } // if the ball hits the arrow
+
+        if(target.tag == "UnbreakableBrickTop" || target.tag == "BrokenBrickTop" || target.tag == "UnbreakableBrickTopVertical") {
+            myRigidBody.velocity = new Vector2(0, 5);
+            
+        } else if (target.tag == "UnbreakableBrickBottom" || target.tag == "BrokenBrickBottom"
+                   || target.tag == "UnbreakableBrickBottomVertical") {
+            myRigidBody.velocity = new Vector2(0, -2);
+            
+        } else if(target.tag == "UnbreakableBrickLeft" || target.tag == "BrokenBrickLeft"
+                  || target.tag == "UnbreakableBrickLeftVertical") {
+            moveLeft = true;
+            moveRight = false;
+            
+        } else if( target.tag == "UnbreakableBrickRight" || target.tag == "BrokenBrickRight" 
+                  || target.tag == "UnbreakableBrickRightVertical") {
+            moveRight = true;
+            moveLeft = false;
+        }
 
         if(target.tag == "BottomBrick") {
             // so ball wouldn't fall through brick.

@@ -33,12 +33,12 @@ public class ArrowScript : MonoBehaviour {
     IEnumerator ResetStickyArrow()
     {
         yield return new WaitForSeconds(2.5f);
-        if (this.gameObject.tag == "FirstStickyArrow")
+        if (this.gameObject.tag == "SingleStickyArrow")
         {
             PlayerScripts.instance.PlayerShootOnce(true);
             this.gameObject.SetActive(false);
         }
-        else if (this.gameObject.tag == "SecondStickyArrow")
+        else if (this.gameObject.tag == "DoubleStickyArrow")
         {
             PlayerScripts.instance.PlayerShootTwice(true);
             this.gameObject.SetActive(false);
@@ -56,9 +56,9 @@ public class ArrowScript : MonoBehaviour {
         if(target.tag == "LargestBall" || target.tag == "LargeBall" || target.tag == "MediumBall"
            || target.tag == "SmallBall" || target.tag == "SmallestBall") {
 
-            if(gameObject.tag == "FirstStickyArrow" || gameObject.tag == "FirstArrow") {
+            if(gameObject.tag == "SingleStickyArrow" || gameObject.tag == "FirstArrow") {
                 PlayerScripts.instance.PlayerShootOnce(true);
-            } else if(gameObject.tag == "SecondStickyArrow" || gameObject.tag == "SecondArrow") {
+            } else if(gameObject.tag == "DoubleStickyArrow" || gameObject.tag == "SecondArrow") {
                 PlayerScripts.instance.PlayerShootTwice(true);
             }
 
@@ -77,7 +77,7 @@ public class ArrowScript : MonoBehaviour {
                 PlayerScripts.instance.PlayerShootTwice(true);
                 this.gameObject.SetActive(false);
             }
-            if (this.gameObject.tag == "FirstStickyArrow")
+            if (this.gameObject.tag == "SingleStickyArrow")
             {
                 canShootStickyArrow = false;
                 Vector3 targetPos = target.transform.position;
@@ -97,7 +97,7 @@ public class ArrowScript : MonoBehaviour {
                 AudioSource.PlayClipAtPoint(stickyClip, transform.position);
                 StartCoroutine("ResetStickyArrow");
             }
-            else if (this.gameObject.tag == "SecondStickyArrow")
+            else if (this.gameObject.tag == "DoubleStickyArrow")
             {
                 canShootStickyArrow = false;
                 Vector3 targetPos = target.transform.position; // position of the brick
@@ -128,9 +128,13 @@ public class ArrowScript : MonoBehaviour {
         if(target.tag == "BrokenBrickTop" || target.tag == "BrokenBrickBottom" 
            || target.tag == "BrokenBrickLeft" || target.tag == "BrokenBrickRight") {
 
-            if(gameObject.tag == "FirstArrow" || gameObject.tag == "FirstStickyArrow"){
+            // callin
+            BrickScript brick = target.gameObject.GetComponentInParent<BrickScript>();
+            brick.StartCoroutine(brick.BreakTheBrick());
+
+            if(gameObject.tag == "FirstArrow" || gameObject.tag == "SingleStickyArrow"){
                 PlayerScripts.instance.PlayerShootOnce(true);
-            } else if(gameObject.tag == "SecondArrow" || gameObject.tag == "SecondStickyArrow") {
+            } else if(gameObject.tag == "SecondArrow" || gameObject.tag == "DoubleStickyArrow") {
                 PlayerScripts.instance.PlayerShootTwice(true);
             }
 

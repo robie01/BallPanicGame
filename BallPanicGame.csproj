@@ -305,6 +305,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ArrowScript.cs" />
     <Compile Include="Assets\Scripts\BallScript.cs" />
+    <Compile Include="Assets\Scripts\BrickScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

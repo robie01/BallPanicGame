@@ -128,7 +128,7 @@ public class ArrowScript : MonoBehaviour {
         if(target.tag == "BrokenBrickTop" || target.tag == "BrokenBrickBottom" 
            || target.tag == "BrokenBrickLeft" || target.tag == "BrokenBrickRight") {
 
-            // callin
+            // break the broken brick
             BrickScript brick = target.gameObject.GetComponentInParent<BrickScript>();
             brick.StartCoroutine(brick.BreakTheBrick());
 

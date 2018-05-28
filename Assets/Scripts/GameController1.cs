@@ -5,9 +5,9 @@ using System;
 using System.IO; // how we read and write our data; Input or output
 using System.Runtime.Serialization.Formatters.Binary; // 
 
-public class GameController : MonoBehaviour
+public class GameController1 : MonoBehaviour
 {
-    public static GameController instance;
+    public static GameController1 instance;
 
     private GameData data;
 
@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     public int currentScore;
 
     public bool isGameStartedFirstTime;
-    private bool isMusicOn;
+    public bool isMusicOn;
     public int selectedPlayer;
     public int selectedWeapon;
     public int coins;
@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
     void MakeSingleton() {
 
         if(instance != null) {
-           //Destroy(this.gameObject);
+           Destroy(this.gameObject);
         } else {
             instance = this;
             DontDestroyOnLoad(this.gameObject);

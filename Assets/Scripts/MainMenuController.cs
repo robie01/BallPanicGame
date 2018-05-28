@@ -14,6 +14,9 @@ public class MainMenuController : MonoBehaviour {
     private bool canTouchSettingsButton;
 
     [SerializeField]
+    private Button musicBtn;
+
+    [SerializeField]
     private Sprite[] musicBtnSprites;
 
     [SerializeField]
@@ -22,11 +25,34 @@ public class MainMenuController : MonoBehaviour {
     [SerializeField]
     private Sprite[] fbSprites;
 
+
+    [SerializeField]
+    private GameObject infoPanel;
+
+    [SerializeField]
+    private Image infoImage;
+
+    [SerializeField]
+    private Sprite[] infoSprite;
+
+    private int infoIndex;
+
+
 	// Use this for initialization
 	void Start () {
         canTouchSettingsButton = true;
         hidden = true;
-		
+
+        if(GameController1.instance.isMusicOn) {
+            musicBtn.image.sprite = musicBtnSprites[0];
+
+        }else {
+            musicBtn.image.sprite = musicBtnSprites[1];
+        }
+
+        // initial image for our info index
+        infoIndex = 0;
+        infoImage.sprite = infoSprite[infoIndex];
 	}
 	
 	// Update is called once per frame
@@ -38,7 +64,7 @@ public class MainMenuController : MonoBehaviour {
     }
 
 
-    // animator for the buttons 
+    // animation for the buttons 
     IEnumerator DisableButtonsWhilePlayingAnimation() {
 
        if(canTouchSettingsButton) {
@@ -56,5 +82,44 @@ public class MainMenuController : MonoBehaviour {
                 canTouchSettingsButton = true; 
             }
         }
+    }
+
+    public void MusicButton()
+    {
+        if (GameController1.instance.isMusicOn)
+        {
+            musicBtn.image.sprite = musicBtnSprites[1];
+
+            GameController1.instance.isMusicOn = false;
+            GameController1.instance.Save();
+        }
+        else
+        {
+            musicBtn.image.sprite = musicBtnSprites[0];
+
+            GameController1.instance.isMusicOn = true;
+            GameController1.instance.Save();
+        }
+    
+    }
+
+
+    public void OpenInfoPanel(){
+
+        infoPanel.SetActive(true);
+    }
+
+    public void CloseInfoPanel() {
+        infoPanel.SetActive(false);
+    }
+
+    public void NextInfo() {
+        infoIndex++;
+
+        if (infoIndex == infoSprite.Length) {
+            infoIndex = 0;
+        }
+
+        infoImage.sprite = infoSprite[infoIndex];
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Navigate : MonoBehaviour {
 
@@ -15,11 +16,10 @@ public class Navigate : MonoBehaviour {
 	}
 
     public void goToMainMenu() {
-
-        Application.LoadLevel("MenuScene");
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void goToShopMenu(){
-        Application.LoadLevel("ShopMenu");
+        SceneManager.LoadScene("ShopMenu");
     }
 }
